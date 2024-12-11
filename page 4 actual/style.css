@@ -1,0 +1,123 @@
+/* General Styles */
+body {
+    font-family: 'Courier New', Courier, monospace;
+    margin: 0;
+    padding: 0;
+    background-color: #f3f3f3;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    height: 100vh;
+    padding-top: 60px; /* Space for fixed header */
+}
+
+/* Header */
+header {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px;
+    background-color: #000;
+    color: #fff;
+    font-weight: bold;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+}
+
+header a {
+    text-decoration: none;
+    color: #fff;
+    padding: 5px 15px;
+    transition: all 0.3s ease-in-out;
+}
+
+header a:hover {
+    background-color: #fff;
+    color: #000;
+    border-radius: 5px;
+}
+
+/* Container */
+.container {
+    text-align: center; /* Centers the title and letters stack */
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: -400px;
+}
+
+/* Title */
+h1 {
+    font-size: 2.5rem;
+    margin-bottom: 2rem; /* Spacing between the title and letters */
+    color: #333;
+    text-align: center;
+}
+
+/* Letters Container */
+.letters-container {
+    position: relative;
+    width: 600px; /* Fixed width for the container */
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Ensures the letters stack is centered */
+    perspective: 1000px; /* For 3D effect */
+}
+
+/* Letter Styles */
+.letter {
+    position: absolute;
+    width: 500px; /* Fixed width for letters */
+    height: 250px; /* Fixed height for letters */
+    padding: 1.5rem; /* Added more padding for better readability */
+    background-color: #fff;
+    font-size: 1.3rem; /* Slightly larger font */
+    line-height: 1.6;
+    color: #000;
+    transform: rotate(var(--rotation)) translateX(var(--x-offset)) translateY(var(--y-offset));
+    z-index: var(--z-index);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Add shadow for better visual */
+    border-radius: 8px; /* Smooth corners for each letter */
+}
+
+/* Random Colors for Letters */
+.letter:nth-child(1n) {
+    background-color: #fef3c7;
+}
+
+.letter:nth-child(2n) {
+    background-color: #fde68a;
+}
+
+.letter:nth-child(3n) {
+    background-color: #fbcfe8;
+}
+
+.letter:nth-child(4n) {
+    background-color: #e9d5ff;
+}
+
+.letter:nth-child(5n) {
+    background-color: #bee3f8;
+}
+
+.letter:nth-child(6n) {
+    background-color: #a7f3d0;
+}
+
+/* Stack Animation */
+@keyframes stack {
+    from {
+        opacity: 0;
+        transform: scale(0.8);
+    }
+    to {
+        opacity: 1;
+        transform: rotate(var(--rotation)) translateX(var(--x-offset)) translateY(var(--y-offset));
+    }
+}
